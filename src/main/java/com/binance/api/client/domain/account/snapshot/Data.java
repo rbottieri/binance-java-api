@@ -15,7 +15,7 @@ public class Data {
     @JsonProperty("balances")
     private List<Balance> balances = null;
     @JsonProperty("totalAssetOfBtc")
-    private String totalAssetOfBtc;
+    private Double totalAssetOfBtc;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -30,12 +30,12 @@ public class Data {
     }
 
     @JsonProperty("totalAssetOfBtc")
-    public String getTotalAssetOfBtc() {
+    public Double getTotalAssetOfBtc() {
         return totalAssetOfBtc;
     }
 
     @JsonProperty("totalAssetOfBtc")
-    public void setTotalAssetOfBtc(String totalAssetOfBtc) {
+    public void setTotalAssetOfBtc(Double totalAssetOfBtc) {
         this.totalAssetOfBtc = totalAssetOfBtc;
     }
 
