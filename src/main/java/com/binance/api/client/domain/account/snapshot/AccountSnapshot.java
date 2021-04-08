@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class AccountSnapshot {
 
     @JsonProperty("code")
-    private Integer code;
+    private Double code;
     @JsonProperty("msg")
     private String msg;
     @JsonProperty("snapshotVos")
@@ -22,12 +22,12 @@ public class AccountSnapshot {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("code")
-    public Integer getCode() {
+    public Double getCode() {
         return code;
     }
 
     @JsonProperty("code")
-    public void setCode(Integer code) {
+    public void setCode(Double code) {
         this.code = code;
     }
 

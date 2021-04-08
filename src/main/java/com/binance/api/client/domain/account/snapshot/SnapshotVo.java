@@ -16,7 +16,7 @@ public class SnapshotVo {
     @JsonProperty("type")
     private String type;
     @JsonProperty("updateTime")
-    private Integer updateTime;
+    private Double updateTime;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -41,12 +41,12 @@ public class SnapshotVo {
     }
 
     @JsonProperty("updateTime")
-    public Integer getUpdateTime() {
+    public Double getUpdateTime() {
         return updateTime;
     }
 
     @JsonProperty("updateTime")
-    public void setUpdateTime(Integer updateTime) {
+    public void setUpdateTime(Double updateTime) {
         this.updateTime = updateTime;
     }
 
