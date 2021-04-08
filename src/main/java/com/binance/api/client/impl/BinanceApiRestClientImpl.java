@@ -5,6 +5,7 @@ import com.binance.api.client.config.BinanceApiConfig;
 import com.binance.api.client.constant.BinanceApiConstants;
 import com.binance.api.client.domain.account.*;
 import com.binance.api.client.domain.account.request.*;
+import com.binance.api.client.domain.account.snapshot.AccountSnapshot;
 import com.binance.api.client.domain.general.Asset;
 import com.binance.api.client.domain.general.ExchangeInfo;
 import com.binance.api.client.domain.market.*;
@@ -165,6 +166,12 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
   @Override
   public Account getAccount(Long recvWindow, Long timestamp) {
     return executeSync(binanceApiService.getAccount(recvWindow, timestamp));
+  }
+
+
+  @Override
+  public AccountSnapshot getAccountSnapshot(String type, Long timestamp) {
+    return executeSync(binanceApiService.getAccountSnapshot(type, timestamp));
   }
 
   @Override

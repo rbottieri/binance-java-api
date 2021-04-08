@@ -15,6 +15,7 @@ import com.binance.api.client.domain.account.request.CancelOrderRequest;
 import com.binance.api.client.domain.account.request.CancelOrderResponse;
 import com.binance.api.client.domain.account.request.OrderRequest;
 import com.binance.api.client.domain.account.request.OrderStatusRequest;
+import com.binance.api.client.domain.account.snapshot.AccountSnapshot;
 import com.binance.api.client.domain.general.ExchangeInfo;
 import com.binance.api.client.domain.general.Asset;
 import com.binance.api.client.domain.market.AggTrade;
@@ -211,6 +212,8 @@ public interface BinanceApiRestClient {
    * Get current account information using default parameters.
    */
   Account getAccount();
+
+  AccountSnapshot getAccountSnapshot(String type, Long timestamp);
 
   /**
    * Get trades for a specific account and symbol.
