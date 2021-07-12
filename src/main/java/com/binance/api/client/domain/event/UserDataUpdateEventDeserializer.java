@@ -23,6 +23,8 @@ public class UserDataUpdateEventDeserializer extends JsonDeserializer<UserDataUp
     if (mapper == null) {
       mapper = new ObjectMapper();
       mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+      mapper.configure(
+              DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_AS_NULL, true);
     }
 
     ObjectCodec oc = jp.getCodec();
