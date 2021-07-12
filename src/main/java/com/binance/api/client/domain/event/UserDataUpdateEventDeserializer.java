@@ -4,10 +4,7 @@ import com.binance.api.client.domain.event.UserDataUpdateEvent.UserDataUpdateEve
 import com.binance.api.client.exception.BinanceApiException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.ObjectCodec;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.*;
 
 import java.io.IOException;
 
@@ -25,6 +22,7 @@ public class UserDataUpdateEventDeserializer extends JsonDeserializer<UserDataUp
 
     if (mapper == null) {
       mapper = new ObjectMapper();
+      mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
     ObjectCodec oc = jp.getCodec();

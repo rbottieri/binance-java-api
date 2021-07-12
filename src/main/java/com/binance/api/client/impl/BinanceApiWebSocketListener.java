@@ -3,6 +3,7 @@ package com.binance.api.client.impl;
 import com.binance.api.client.BinanceApiCallback;
 import com.binance.api.client.exception.BinanceApiException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import okhttp3.Response;
@@ -25,6 +26,7 @@ public class BinanceApiWebSocketListener<T> extends WebSocketListener {
   private boolean closing = false;
 
   public BinanceApiWebSocketListener(BinanceApiCallback<T> callback, Class<T> eventClass) {
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     this.callback = callback;
     this.objectReader = mapper.readerFor(eventClass);
   }
